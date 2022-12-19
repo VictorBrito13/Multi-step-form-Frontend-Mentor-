@@ -1,0 +1,59 @@
+span{
+    display: block;
+}
+.navigator-container{
+    min-height: 568px;
+    width: 80%;
+    padding: 15px;
+    background-image: url('../assets/images/bg-sidebar-desktop.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.step-container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-areas:
+                'step-number step-title'
+                'step-number step-description'
+    ;
+}
+.step-number{
+    grid-area: step-number;
+    display: inline-flex;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    background-color: transparent;
+    outline: 1px solid #fff;
+}
+.step-container h2, p{
+    color: #fff;
+    text-transform: uppercase;
+}
+.step-container h2{
+    grid-area: step-title;
+    font-size: 1rem;
+    color: #918DFF;
+    font-weight: 400;
+}
+.step-container p{
+    grid-area: step-description;
+    font-weight: 700;
+}
+.step-active{
+    color: #12335A;
+    background-color: #BEE2FC;
+    outline: 0px;
+}
