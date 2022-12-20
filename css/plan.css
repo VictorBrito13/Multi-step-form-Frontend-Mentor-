@@ -1,0 +1,26 @@
+.plan-container{
+    display: grid;
+    grid-template-rows: repeat(2, 50%);
+    grid-template-areas:
+    "image"
+    "plan-info"
+    ;
+    outline: 1px solid #E9E8EC;
+    min-height: 200px;
+    width: 80%;
+    margin: auto;
+    border-radius: 10px;
+    padding: 10px;
+}
+.plan-container img{
+    grid-area: image;
+}
+.plan-info{
+    grid-area: plan-info;
+}
+.plan-info{
+    color: #A2A3AD;
+}
+.plan-info h2{
+    color: #062B58;
+}

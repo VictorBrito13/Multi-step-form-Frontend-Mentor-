@@ -39,4 +39,4 @@ class StepsNavigatorComponent extends HTMLElement {
     }
 }
 
-export { StepsNavigatorComponent }
+export { StepsNavigatorComponent };

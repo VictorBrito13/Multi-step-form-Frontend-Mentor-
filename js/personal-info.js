@@ -10,9 +10,9 @@ class PersonalInfoComponent extends HTMLElement {
                 globalStyles = document.createElement('link'),
                 personalInfo = document.createElement('div');
 
-        personalInfo.classList.add('personal-info-container')
+        personalInfo.classList.add('personal-info-container');
         globalStyles.rel = 'stylesheet';
-        globalStyles.href = './css/global-styles-form.css'
+        globalStyles.href = './css/global-styles-form.css';
         style.rel = 'stylesheet';
         style.href = './css/personal-info.css';
 
@@ -30,15 +30,15 @@ class PersonalInfoComponent extends HTMLElement {
                 <input text='tel' placeholder='e.g. + 1234 567 890'>
             </div>
 
-            <button type='button' class="next-step">Next Step</button>
+            <button type='button' class="next-step" style="margin: 50px; float: left;">Next Step</button>
         `;
 
 
-        shadow.appendChild(globalStyles)
+        shadow.appendChild(globalStyles);
         shadow.appendChild(style);
         shadow.appendChild(personalInfo);
     }
 }
 
 
-export { PersonalInfoComponent }
+export { PersonalInfoComponent };
