@@ -1,5 +1,5 @@
 function router(renderParent){
-    let hash = location.hash || '#personal-info';
+    let hash = location.hash;
 
     const routes = [
         {
@@ -13,12 +13,16 @@ function router(renderParent){
         {
             path: '#add-ons',
             component: '<app-add-ons></app-add-ons>'
+        },
+        {
+            path: '#summary',
+            component: '<app-summary></app-summary>'
         }
     ];
 
     const route = routes.filter(route => route.path === hash);
 
-    renderParent.innerHTML = route[0].component
+    renderParent.innerHTML = route[0].component;
 }
 
-export { router }
+export { router };

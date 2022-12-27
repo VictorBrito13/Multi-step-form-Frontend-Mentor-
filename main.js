@@ -5,11 +5,13 @@ import { PlanComponent } from "./js/plan.js";
 import { AddOnsComponent } from "./js/add-ons.js";
 import { OnsComponent } from "./js/ons.js";
 import { router } from "./router/router.js";
+import { SummaryComponent } from "./js/summary.js";
 
 //*Components
 customElements.define('app-personal-info', PersonalInfoComponent);
 customElements.define('app-select-plan', SelectPlanComponent);
 customElements.define('app-add-ons', AddOnsComponent);
+customElements.define('app-summary', SummaryComponent);
 
 //*UI-Components
 customElements.define('app-steps-nav', StepsNavigatorComponent);
@@ -22,7 +24,7 @@ document.addEventListener('DOMContentLoaded', e => {
     const form = document.querySelector('form');
 
     root.innerHTML = '<app-steps-nav></app-steps-nav>';
-    form.innerHTML += '<app-personal-info></app-personal-info>';
+    form.innerHTML += '<app-summary></app-summary>';
     root.appendChild(form);
 });
 

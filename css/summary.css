@@ -1,0 +1,64 @@
+.summary-info-container{
+    background-color: #F8F9FE;
+    border-radius: 10px;
+    padding: 10px;
+}
+.summary-info{
+    display: grid;
+    grid-template-columns: 80% 20%;
+    grid-template-rows: repeat(2, 50%);
+    grid-template-areas:
+                        'title price'
+                        'change price';
+}
+.plan{
+    grid-area: title;
+    align-self: flex-end;
+    font-size: 16px;
+    color: #293B5B;
+}
+.change-time-plan{
+    grid-area: change;
+    align-self: flex-start;
+    background-color: transparent;
+    color: #BCBCC7;
+    text-decoration: underline;
+    border: 0px;
+    width: 10%;
+    cursor: pointer;
+}
+.price{
+    grid-area: price;
+    align-self: center;
+    justify-self: flex-end;
+    color: #092B5C;
+    font-weight: 700;
+}
+.add-ons{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.add-ons-price{
+    color: #092B5C;
+    font-weight: 500;
+}
+.total{
+    display: inline-block;
+    display: flex;
+    justify-content: space-between;
+}
+.total-price{
+    color: #6251F8;
+    display: inline-block;
+}
+.confirm{
+    color: #fff;
+    background-color: #483DFF;
+    padding: 15px;
+    text-decoration: none;
+    border-radius: 10px;
+    min-width: 90px;
+    float: right;
+    text-align: center;
+}
