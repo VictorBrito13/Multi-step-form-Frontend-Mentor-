@@ -10,7 +10,7 @@ class StepsNavigatorComponent extends HTMLElement {
         navigatorContainer.innerHTML =
         `
         <span class="step-container">
-            <span class="step-number">1</span>
+            <span class="step-number step-active">1</span>
             <h2>Step 1</h2>
             <p>Your Info</p>
         </span>

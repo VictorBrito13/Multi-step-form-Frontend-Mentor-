@@ -1,0 +1,44 @@
+.ons-container {
+    display: grid;
+    grid-template-columns: 10% 70% 20%;
+    grid-template-rows: repeat(2, 50%);
+    grid-template-areas:
+                        'input title price'
+                        'input description price';
+    min-height: 100px;
+    outline: 1px solid #DFDEE3;
+    border-radius: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+}
+.ons-active{
+    outline: 1px solid #746BCF;
+    background-color: #F8F9FE;
+}
+input {
+    grid-area: input;
+    align-self: center;
+}
+input[type="checkbox"]:checked {
+    accent-color: #746BCF;
+}
+.title {
+    grid-area: title;
+    font-weight: 700;
+    color: #1B324F;
+    align-self: flex-end;
+}
+.description {
+    grid-area: description;
+    font-weight: 400;
+    color: #BABAC4;
+    align-self: flex-start;
+}
+.price {
+    grid-area: price;
+    align-self: center;
+    font-weight: 500;
+    color: #746BCF;
+}
