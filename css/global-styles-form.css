@@ -14,10 +14,12 @@ p{
     border: 0px;
     padding: 15px;
     border-radius: 5px;
+    text-decoration: none;
 }
 .prev-step{
     background-color: transparent;
     border: 0px;
     color: #A9AAAF;
     font-size: 1rem;
+    text-decoration: none;
 }

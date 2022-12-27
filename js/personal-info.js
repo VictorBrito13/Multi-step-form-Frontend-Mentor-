@@ -30,7 +30,9 @@ class PersonalInfoComponent extends HTMLElement {
                 <input text='tel' placeholder='e.g. + 1234 567 890'>
             </div>
 
-            <button type='button' class="next-step" style="margin: 50px; float: left;">Next Step</button>
+            <a href="#select-plan" class="next-step" style="margin: 50px; float: left;">
+                Next Step
+            </a>
         `;
 
 

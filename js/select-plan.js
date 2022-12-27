@@ -15,8 +15,11 @@ class SelectPlanComponent extends HTMLElement {
 
         this.plans.forEach(plan => {
             plans_container.innerHTML +=
-            `<app-plan-component
-            image=${plan.image} title=${plan.title} price=${plan.price}></app-plan-component>`
+            `<app-plan
+            image=${plan.image}
+            title=${plan.title}
+            price=${plan.price}>
+            </app-plan>`
         });
         return plans_container;
     }
@@ -35,25 +38,22 @@ class SelectPlanComponent extends HTMLElement {
 
         selectPlan.innerHTML =
         `
-        <h1 class="titel-component">Select your plan</h1>
-        <p>You have the option of monthly of yearly billing</p>
-        `
-        selectPlan.appendChild(this.plansHtml());
-        selectPlan.innerHTML +=
-        `
-        <div class="plan-time-container">
-            <span class="selection-active">Monthly</span>
-            <div class="selection-container">
-                <span class="selection"></span>
+            <h1 class="titel-component">Select your plan</h1>
+            <p>You have the option of monthly of yearly billing</p>
+            ${this.plansHtml().outerHTML}
+            <div class="plan-time-container">
+                <span class="selection-active">Monthly</span>
+                <div class="selection-container">
+                    <span class="selection"></span>
+                </div>
+                <span>Yearly</span>
             </div>
-            <span>Yearly</span>
-        </div>
 
-        <div class="steps-stages"
-        style="display:flex; justify-content: space-between; margin-top: 25px">
-            <button type="button" class="prev-step">Go Back</button>
-            <button type="button" class="next-step">Next Step</button>
-        </div>
+            <div class="steps-stages"
+            style="display:flex; justify-content: space-between; margin-top: 25px">
+                <a href="#personal-info" class="prev-step">Go Back</a>
+                <a href="#add-ons" class="next-step">Next Step</a>
+            </div>
         `;
 
         shadow.appendChild(globalStyles);

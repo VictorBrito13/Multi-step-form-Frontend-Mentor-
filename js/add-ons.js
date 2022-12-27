@@ -40,9 +40,9 @@ class AddOnsComponent extends HTMLElement {
         `
             <h1 class="titel-component">Pick add-ons</h1>
             <p>Add-ons help enhance your gaming experience.</p>
-            ${this.addOnsTemplate().innerHTML}
-            <button type="button" class="prev-step" style="margin: 10px;">Go Back</button>
-            <button type="button" class="next-step" style="float: right; margin: 10px;">Next Step</button>
+            ${this.addOnsTemplate().outerHTML}
+            <a href="#select-plan" class="prev-step" style="margin: 10px;">Go Back</a>
+            <a href="#summary" class="next-step" style="float: right; margin: 10px;">Next Step</a>
         `
 
 
