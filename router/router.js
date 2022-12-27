@@ -17,6 +17,10 @@ function router(renderParent){
         {
             path: '#summary',
             component: '<app-summary></app-summary>'
+        },
+        {
+            path: '#succes',
+            component: ''
         }
     ];
 

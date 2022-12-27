@@ -1,0 +1,11 @@
+.succes-subscribed-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: auto;
+}
+p{
+    text-align: center;
+}
