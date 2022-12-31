@@ -1,3 +1,5 @@
+import { validateStateInput } from "../validators/validators-form.js";
+
 class PersonalInfoComponent extends HTMLElement {
 
     constructor(){
@@ -23,11 +25,11 @@ class PersonalInfoComponent extends HTMLElement {
 
             <div class="form-content-container">
                 <label>Name</label>
-                <input type='text' name='name' placeholder='e.g. Stephen King'>
+                <input type='text' name='name' placeholder='e.g. Stephen King' required pattern="[A-Za-z .]{5,}">
                 <label>Email Address</label>
-                <input type='email' placeholder='e.g. stephenking@lorem.com'>
+                <input type='email' name='email' placeholder='e.g. stephenking@lorem.com' required pattern="[\\w.-]+@[\\w]+(\\.){1}[a-z]{2,4}">
                 <label>Phone Number</label>
-                <input text='tel' placeholder='e.g. + 1234 567 890'>
+                <input type='tel' name='cellphone' placeholder='e.g. + 1234 567 890' required pattern="(\\+ ){1}([\\d ]{5}){1}([\\d ]{4}){1}(\\d{3}){1}">
             </div>
 
             <a href="#select-plan" class="next-step" style="margin: 50px; float: left;">
@@ -35,6 +37,24 @@ class PersonalInfoComponent extends HTMLElement {
             </a>
         `;
 
+        const validityState = {};
+        const data_user = {}
+
+        const personalInfoData = personalInfo.querySelectorAll('input');
+
+        for(let data of personalInfoData){
+            data.addEventListener('blur', e => {
+                data_user[e.target.name] = e.target.value;
+                validityState[e.target.name] = validateStateInput(e.target);
+            });
+            validityState[data.name] = validateStateInput(data);
+        }
+
+        personalInfo.querySelector('a.next-step').addEventListener('click', e => {
+            const stateValue = Object.values(validityState).every(value => value);
+            if(!stateValue) {e.preventDefault(); alert('Hey some field was not filled correctly');}
+            localStorage.setItem('data_user', data_user)
+        });
 
         shadow.appendChild(globalStyles);
         shadow.appendChild(style);

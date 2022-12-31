@@ -23,3 +23,14 @@
     padding: 10px;
     font-size: 1rem;
 }
+.form-content-container input:focus{
+    outline: 1px solid #6B66AC;
+}
+
+/** Validations Styles  */
+input:invalid{
+    outline: 1px solid #ed3548;
+}
+input:valid{
+    outline: 1px solid #d6d9e6;
+}
