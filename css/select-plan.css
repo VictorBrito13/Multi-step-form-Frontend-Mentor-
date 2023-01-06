@@ -34,4 +34,9 @@
     height: 20px;
     width: 20px;
     border-radius: 50%;
+    transition: margin .2s linear;
+}
+.selection-yr{
+    transition: margin .2s linear;
+    margin-left: calc(100% - 20px);
 }

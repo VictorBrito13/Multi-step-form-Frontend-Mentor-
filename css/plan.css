@@ -11,6 +11,16 @@
     margin: auto;
     border-radius: 10px;
     padding: 10px;
+    cursor: pointer;
+    transition: outline .3s linear;
+}
+.plan-container:hover{
+    transition: outline .3s linear;
+    outline: 1px solid #564F93;
+}
+.plan-selected{
+    outline: 1px solid #564F93;
+    background-color: #F8F9FE;
 }
 .plan-container img{
     grid-area: image;

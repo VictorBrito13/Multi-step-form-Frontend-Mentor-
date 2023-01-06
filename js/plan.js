@@ -1,26 +1,32 @@
+import { get_obs } from "./select-plan.js";
+
 class PlanComponent extends HTMLElement {
     image = '';
     title = '';
     price = 0;
+    time = 'mo'
 
     constructor(){
         super();
     }
 
     static get observedAttributes(){
-        return ['image', 'title', 'price'];
+        return ['data-image', 'data-title', 'data-price', 'data-time'];
     }
 
     attributeChangedCallback(name, oldValue, newValue){
         switch(name){
-            case 'image':
+            case 'data-image':
                 this.image = newValue;
             break;
-            case 'title':
+            case 'data-title':
                 this.title = newValue;
             break;
-            case 'price':
+            case 'data-price':
                 this.price = newValue;
+            break;
+            case 'data-time':
+                this.time = newValue;
             break;
         }
     }
@@ -39,11 +45,17 @@ class PlanComponent extends HTMLElement {
         <img src="${this.image}">
         <span class="plan-info">
             <h2>${this.title}</h2>
-            <p>$${this.price}/mo</p>
+            <p>$<span class="price">${this.price}</span>/<span class="time">${this.time}</span></p>
         </span>
         `
 
-        shadow.appendChild(style)
+        get_obs().subscribe(data => {
+            this.time = data;
+            plan.querySelector('.time').innerHTML = this.time;
+            plan.querySelector('.price').innerHTML = this.price;
+        });
+
+        shadow.appendChild(style);
         shadow.appendChild(plan);
     }
 }
