@@ -1,34 +1,37 @@
 class OnsComponent extends HTMLElement {
-    title = null
-    description = null
-    price = null
+    title = null;
+    description = null;
+    price = null;
+    planTime = 'mo';
 
     constructor(){
         super();
     }
 
     static get observedAttributes(){
-        return ['title', 'description', 'price'];
+        return ['data-title', 'data-description', 'data-price'];
     }
 
     attributeChangedCallback(attr, oldValue, newValue){
         switch(attr){
-            case 'title':
+            case 'data-title':
             this.title = newValue;
             break;
 
-            case 'description':
+            case 'data-description':
             this.description = newValue;
             break;
 
-            case 'price':
+            case 'data-price':
             this.price = newValue;
             break;
         }
     }
 
     connectedCallback(){
-        const shadow = this.attachShadow({ mode: 'closed' });
+        this.planTime = localStorage.getItem('money-time');
+
+        const shadow = this.attachShadow({ mode: 'open' });
         const styles = document.createElement('link'),
             onsContainer = document.createElement('div');
 
@@ -41,23 +44,12 @@ class OnsComponent extends HTMLElement {
             <input type="checkbox">
             <span class="title">${this.title}</span>
             <span class="description">${this.description}</span>
-            <span class="price">$${this.price}/mo</span>
+            <span class="price">$${this.price}/<span>${this.planTime}</span></span>
             </label>
-        `;
-        const ons = onsContainer.querySelectorAll('.ons-container');
-        ons.forEach(on => {
-            on.addEventListener('click', e => {
-                this.addClass(on, 'ons-active', on.querySelector('input[type="checkbox"]').checked);
-            });
-        });
-
+        `
 
         shadow.appendChild(styles);
         shadow.appendChild(onsContainer);
-    }
-
-    addClass(el, cssClass, controller=undefined){
-        el.classList.toggle(cssClass, controller);
     }
 }
 
