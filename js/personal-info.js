@@ -53,7 +53,7 @@ class PersonalInfoComponent extends HTMLElement {
         personalInfo.querySelector('a.next-step').addEventListener('click', e => {
             const stateValue = Object.values(validityState).every(value => value);
             if(!stateValue) {e.preventDefault(); alert('Hey some field was not filled correctly');}
-            localStorage.setItem('data_user', data_user)
+            localStorage.setItem('data_user', JSON.stringify(data_user))
         });
 
         shadow.appendChild(globalStyles);
