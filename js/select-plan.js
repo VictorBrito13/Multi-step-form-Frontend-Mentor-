@@ -30,7 +30,7 @@ class SelectPlanComponent extends HTMLElement {
             data-selected='false'
             data-image="${plan.image}"
             data-title="${plan.title}"
-            data-price=${plan.price}>
+            data-price="${plan.price}">
             </app-plan>`
         });
         return plans_container;
@@ -79,21 +79,19 @@ class SelectPlanComponent extends HTMLElement {
 
             this.planTime = localStorage.getItem('money-time');
 
-            this.planTime === 'mo' ?
-            localStorage.setItem('money-time', 'yr') :
-            localStorage.setItem('money-time', 'mo')
-
-            this.planTime = localStorage.getItem('money-time');
             const data_user = JSON.parse(localStorage.getItem('data_user'));
 
             if(this.planTime === 'mo'){
-                plansComponents.forEach(plan => plan.dataset.price = plan.dataset.price / 10);
-                data_user.plan.price = data_user.plan.price / 10
+                localStorage.setItem('money-time', 'yr');
+                plansComponents.forEach(plan => plan.dataset.price = plan.dataset.price * 10);
+                data_user.plan.price = data_user.plan.price * 10;
             }
             else{
-                plansComponents.forEach(plan => plan.dataset.price = plan.dataset.price * 10);
-                data_user.plan.price = data_user.plan.price * 10
+                localStorage.setItem('money-time', 'mo');
+                plansComponents.forEach(plan => plan.dataset.price = plan.dataset.price / 10);
+                data_user.plan.price = data_user.plan.price / 10;
             }
+            this.planTime = localStorage.getItem('money-time');
             localStorage.setItem('data_user', JSON.stringify(data_user));
 
             obs.next(this.planTime);

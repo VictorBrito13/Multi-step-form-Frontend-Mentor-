@@ -20,7 +20,7 @@ function selectEvent(elements, element, htmlClass){
     });
 
     const data_user = JSON.parse(localStorage.getItem('data_user'));
-    data_user['plan'] = {title: element.dataset.title, price: element.dataset.price}
+    data_user['plan'] = {title: element.dataset.title, price: parseInt(element.dataset.price)}
     localStorage.setItem('data_user', JSON.stringify(data_user));
 }
 

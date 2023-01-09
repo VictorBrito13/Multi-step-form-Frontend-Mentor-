@@ -1,4 +1,4 @@
-import { toggleClass } from "../helpers/add-ons.js";
+import { toggleClass } from "../helpers/select-plans.js";
 
 class AddOnsComponent extends HTMLElement {
     planTime = 'mo'
@@ -31,8 +31,9 @@ class AddOnsComponent extends HTMLElement {
     }
 
     connectedCallback(){
-        this.data_user = JSON.parse(localStorage.getItem('data_user'))
-        this.data_user.ons = [];
+        this.data_user = JSON.parse(localStorage.getItem('data_user'));
+        this.data_user['ons'] = [];
+        localStorage.setItem('data_user', JSON.stringify(this.data_user));
         this.planTime = localStorage.getItem('money-time');
         const shadow = this.attachShadow({ mode: 'open' });
         const globalStyles = document.createElement('link'),
@@ -54,7 +55,7 @@ class AddOnsComponent extends HTMLElement {
             const ons = addOnsContainer.querySelectorAll('app-ons');
             ons.forEach(on => {
                 on.addEventListener('input', e => {
-                    toggleClass(on.shadowRoot.querySelector('div .ons-container'), 'ons-active', on.shadowRoot.querySelector('input[type="checkbox"]').checked);
+                    toggleClass(on.shadowRoot.querySelector('div .ons-container'), 'ons-active');
                     if(!this.data_user.ons.some(element => element.title === on.title)){
                         this.data_user.ons.push({title: on.dataset.title, price: parseInt(on.dataset.price)});
                     }else{

@@ -4,7 +4,7 @@ class PlanComponent extends HTMLElement {
     image = '';
     title = '';
     price = 0;
-    time = 'mo'
+    time = null;
 
     constructor(){
         super();
@@ -32,6 +32,7 @@ class PlanComponent extends HTMLElement {
     }
 
     connectedCallback(){
+        this.time = localStorage.getItem('money-time');
         const shadow = this.attachShadow({ mode: 'open' });
         const style = document.createElement('link'),
             plan = document.createElement('div');

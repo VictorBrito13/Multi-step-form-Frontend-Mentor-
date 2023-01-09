@@ -9,6 +9,7 @@ class SummaryComponent extends HTMLElement {
     connectedCallback(){
         this.data_user = JSON.parse(localStorage.getItem('data_user'));
         this.planTime = localStorage.getItem('money-time');
+
         const shadow = this.attachShadow({ mode: 'closed' });
         const styles = document.createElement('link'),
             globalStyles = document.createElement('link'),
@@ -46,18 +47,20 @@ class SummaryComponent extends HTMLElement {
             if(this.planTime === 'mo') {
                 localStorage.setItem('money-time', 'yr');
                 this.data_user['plan'].price = this.data_user['plan'].price * 10;
-                this.data_user['ons'].forEach(on => on.price = on.price * 10);
                 this.total = this.total * 10;
+                this.data_user['ons']?.forEach(on => on.price = on.price * 10);
             }
             else {
                 localStorage.setItem('money-time', 'mo');
                 this.data_user['plan'].price = this.data_user['plan'].price / 10;
-                this.data_user['ons']?.forEach(on => on.price = on.price / 10);
                 this.total = this.total / 10;
+                this.data_user['ons']?.forEach(on => on.price = on.price / 10);
             }
+
             localStorage.setItem('data_user', JSON.stringify(this.data_user))
             summaryContainer.querySelector('.total__price').textContent = this.total;
             summaryContainer.querySelector('.add-ons-container').innerHTML = null;
+
             this.data_user.ons.forEach(element => {
                 const p = document.createElement('p');
                 p.classList.add('add-ons');
