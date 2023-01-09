@@ -23,7 +23,7 @@ class AddOnsComponent extends HTMLElement {
             `<app-ons
             data-title="${on.title}"
             data-description="${on.description}"
-            data-price="${on.price}">
+            data-price=${on.price}>
             </app-ons>`
         });
 
@@ -56,7 +56,7 @@ class AddOnsComponent extends HTMLElement {
                 on.addEventListener('input', e => {
                     toggleClass(on.shadowRoot.querySelector('div .ons-container'), 'ons-active', on.shadowRoot.querySelector('input[type="checkbox"]').checked);
                     if(!this.data_user.ons.some(element => element.title === on.title)){
-                        this.data_user.ons.push({title: on.dataset.title, price: on.dataset.price});
+                        this.data_user.ons.push({title: on.dataset.title, price: parseInt(on.dataset.price)});
                     }else{
                         const index = this.data_user.ons.findIndex(element => element.title === on.title);
                         this.data_user.ons.splice(index, 1);

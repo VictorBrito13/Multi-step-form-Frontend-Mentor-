@@ -28,8 +28,8 @@ class SelectPlanComponent extends HTMLElement {
             plans_container.innerHTML +=
             `<app-plan
             data-selected='false'
-            data-image=${plan.image}
-            data-title=${plan.title}
+            data-image="${plan.image}"
+            data-title="${plan.title}"
             data-price=${plan.price}>
             </app-plan>`
         });

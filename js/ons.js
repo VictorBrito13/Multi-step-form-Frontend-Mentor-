@@ -1,7 +1,7 @@
 class OnsComponent extends HTMLElement {
     title = null;
     description = null;
-    price = null;
+    price = 0;
     planTime = 'mo';
 
     constructor(){

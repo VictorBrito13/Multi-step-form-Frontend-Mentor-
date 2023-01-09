@@ -22,10 +22,16 @@
     align-self: flex-start;
     background-color: transparent;
     color: #BCBCC7;
+    font-size: 1rem;
     text-decoration: underline;
     border: 0px;
     width: 10%;
     cursor: pointer;
+    transition: color .3s linear;
+}
+.change-time-plan:hover{
+    transition: color .3s linear;
+    color: #7C6FEC;
 }
 .price{
     grid-area: price;
@@ -61,4 +67,9 @@
     min-width: 90px;
     float: right;
     text-align: center;
+    transition: background-color .3s linear;
+}
+.confirm:hover{
+    transition: background-color .3s linear;
+    background-color: #938CFE;
 }
