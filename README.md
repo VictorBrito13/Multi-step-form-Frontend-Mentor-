@@ -1,4 +1,9 @@
 # Frontend Mentor - Multi-step form
+## View the live project [here](https://main--multi-step-form-victor-brito.netlify.app)
+Technologies:
+  1. HTML
+  2. CSS
+  3. JS (vanilla js SPA)
 
 ![Design preview for the Multi-step form coding challenge](./design/desktop-preview.jpg)
 
