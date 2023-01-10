@@ -16,3 +16,13 @@ body{
     padding: 10px;
     width: 80%;
 }
+
+@media(min-width: 375px) and (max-width:1140px){
+    .form-container{
+        grid-template-rows: 30% 70%;
+        grid-template-columns: none;
+        width: 100%;
+        padding: 0px;
+        background: none;
+    }
+}

@@ -57,3 +57,26 @@ span{
     background-color: #BEE2FC;
     outline: 0px;
 }
+
+@media(min-width: 375px) and (max-width:1140px){
+    .navigator-container{
+        background-image: url('../assets/images/bg-sidebar-mobile.svg');
+        height: 100%;
+    }
+    .navigator-container{
+        min-height: auto;
+        width: 100%;
+        padding: 0px;
+        flex-direction: row;
+        border-radius: 0px;
+    }
+    .step-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* width: fit-content; */
+    }
+    .step-container h2, p{
+        display: none;
+    }
+}

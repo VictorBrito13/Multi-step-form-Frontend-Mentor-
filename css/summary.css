@@ -73,3 +73,13 @@
     transition: background-color .3s linear;
     background-color: #938CFE;
 }
+
+@media (min-width: 375px) and (max-width: 1140px){
+    .summary-container{
+        background-color: #fff;
+        width: 80%;
+        margin: auto;
+        padding: 15px;
+        border-radius: 15px;
+    }
+}

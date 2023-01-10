@@ -36,19 +36,23 @@ class AddOnsComponent extends HTMLElement {
         localStorage.setItem('data_user', JSON.stringify(this.data_user));
         this.planTime = localStorage.getItem('money-time');
         const shadow = this.attachShadow({ mode: 'open' });
-        const globalStyles = document.createElement('link'),
+        const styles = document.createElement('link'),
+            globalStyles = document.createElement('link'),
             addOnsContainer = document.createElement('div')
 
+        styles.rel = 'stylesheet';
+        styles.href = './css/add-ons.css';
         globalStyles.rel = 'stylesheet';
         globalStyles.href = './css/global-styles-form.css';
+        addOnsContainer.classList.add('add-ons-container');
 
         addOnsContainer.innerHTML =
         `
             <h1 class="titel-component">Pick add-ons</h1>
             <p>Add-ons help enhance your gaming experience.</p>
             ${this.addOnsTemplate().outerHTML}
-            <a href="#select-plan" class="prev-step" style="float: left; margin-top: 10px;">Go Back</a>
-            <a href="#summary" class="next-step" style="float: right; margin: 10px;">Next Step</a>
+            <a href="#select-plan" class="prev-step" style="float: left; margin-top: 25px;">Go Back</a>
+            <a href="#summary" class="next-step" style="float: right; margin: 25px;">Next Step</a>
         `
 
         customElements.whenDefined('app-ons').then(() => {
@@ -68,6 +72,7 @@ class AddOnsComponent extends HTMLElement {
         });
 
         shadow.appendChild(globalStyles);
+        shadow.appendChild(styles);
         shadow.appendChild(addOnsContainer);
     }
 

@@ -34,3 +34,18 @@
 .plan-info h2{
     color: #062B58;
 }
+
+@media (min-width: 375px) and (max-width: 1140px){
+    .plan-container{
+        grid-template-columns: 20% 80%;
+        grid-template-areas:
+                            "image plan-info"
+                            "image plan-info";
+        justify-content: center;
+        align-items: center;
+        margin: 5px;
+        min-height: none;
+        min-height: fit-content;
+    }
+
+}

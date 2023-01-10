@@ -40,3 +40,17 @@
     transition: margin .2s linear;
     margin-left: calc(100% - 20px);
 }
+
+@media (min-width: 375px) and (max-width: 1140px){
+    .select-plan-container{
+        background-color: #fff;
+        padding: 15px;
+        width: 80%;
+        margin: auto;
+        border-radius: 15px;
+    }
+    .plans{
+        grid-template-columns: none;
+        grid-template-rows: repeat(3, 33%);
+    }
+}

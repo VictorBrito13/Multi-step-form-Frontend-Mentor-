@@ -19,6 +19,7 @@ class SummaryComponent extends HTMLElement {
         globalStyles.href = './css/global-styles-form.css';
         styles.rel = 'stylesheet';
         styles.href = './css/summary.css';
+        summaryContainer.classList.add('summary-container');
 
         summaryContainer.innerHTML =
         `
