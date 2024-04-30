@@ -35,7 +35,7 @@ input:valid{
     outline: 1px solid #d6d9e6;
 }
 
-@media(min-width: 375px) and (max-width: 1140px){
+@media (max-width: 1140px) {
     .personal-info-container{
         background-color: #fff;
         width: 80%;
